@@ -1,54 +1,37 @@
-# CGPA Calculator
+# CGPA Calculator — CodeAlpha Internship
 
-A simple **C++ based CGPA Calculator** that calculates semester SGPA and overall CGPA using course grades and credit hours.
+A **C++ OOP-based CGPA Calculator** developed as **Task 1 of my CodeAlpha Internship**.
 
-I built this project to practice **C++ OOP concepts, arrays, loops, functions, input validation, and basic project structure** while working on a practical problem that students can actually use.
+The project calculates semester-wise SGPA and overall CGPA using course grades and credit hours. I built it while practicing C++ fundamentals and Object-Oriented Programming concepts.
 
-## Features
+## 📌 Internship Task
 
-* Calculate SGPA for individual semesters
-* Calculate overall CGPA for multiple semesters
-* Enter grades as letters such as `A+`, `A`, `B+`, etc.
-* Automatically convert grades into grade points
-* Calculate SGPA using credit-weighted grade points
-* Supports multiple courses in each semester
-* Handles invalid grades and incorrect numeric inputs
-* Validates course and credit-hour values
-* Uses OOP concepts with a dedicated `SGPACalculator` class
+**Program:** CodeAlpha Internship
+**Task:** Task 1 — CGPA Calculator
+**Language:** C++
+**Concept:** Object-Oriented Programming (OOP)
 
-## How It Works
+## About the Project
 
-For each semester, the program asks for:
+This project allows a student to enter the number of semesters, courses, grades, and credit hours. The program automatically converts each grade into its corresponding grade point and calculates the semester SGPA and overall CGPA.
 
-1. Number of courses
-2. Grade obtained in each course
-3. Credit hours for each course
+The calculation is credit-weighted, so courses with different credit hours are handled correctly.
 
-The program then converts the entered grade into its corresponding grade point and calculates:
+## ✨ Features
 
-```text
-Weighted Points = Grade Point × Credit Hours
-```
+* Semester-wise SGPA calculation
+* Overall CGPA calculation
+* Multiple semesters and courses
+* Grade entered as a letter (`O`, `A+`, `A`, etc.)
+* Automatic grade-to-point conversion
+* Credit-weighted SGPA calculation
+* Input validation and error handling
+* Object-Oriented Programming structure
+* Clean and modular C++ code
 
-The semester SGPA is calculated using:
+## 🎓 IKGPTU Grading System
 
-```text
-SGPA = Total Weighted Points / Total Credit Hours
-```
-
-For multiple semesters, the program combines the weighted points and total credits from all semesters to calculate the overall CGPA:
-
-```text
-CGPA = Total Weighted Points of All Semesters
-       ---------------------------------------
-             Total Credits of All Semesters
-```
-
-This approach also handles semesters with different total credit hours correctly.
-
-## Grading System
-
-The calculator follows the grade-point conversion used by **IKG Punjab Technical University (IKGPTU)**:
+The grade-point conversion used in this project follows the grading system implemented for **IKG Punjab Technical University (IKGPTU)**:
 
 | Grade | Grade Point |
 | ----- | ----------- |
@@ -60,7 +43,7 @@ The calculator follows the grade-point conversion used by **IKG Punjab Technical
 | C     | 5           |
 | P     | 4           |
 
-The program takes the grade as a string and automatically converts it into the corresponding grade point before calculating the SGPA.
+The program accepts the grade as a string and automatically converts it into the corresponding grade point.
 
 For example:
 
@@ -74,130 +57,95 @@ C  → 5
 P  → 4
 ```
 
-If an unsupported grade is entered, the program treats it as invalid and asks the user to enter a valid grade again.
+## 🧮 How the Calculation Works
 
-> **Note:** The grading scale is implemented according to the IKGPTU grading scheme used for this project.
-
-
-## OOP Concepts Used
-
-This project uses basic Object-Oriented Programming concepts:
-
-* **Class** — `SGPACalculator`
-* **Object** — Each semester is handled using an object of the class
-* **Encapsulation** — Course data and calculation logic are kept inside the class
-* **Private members** — Store grades, credits, and calculation data
-* **Public member functions** — Handle input, calculations, and results
-* **Constructor** — Initializes the calculator's data
-
-## Input Validation
-
-The program also checks for common input mistakes, including:
-
-* Invalid number of courses
-* More than 50 courses
-* Invalid grade names
-* Negative or zero credit hours
-* Non-numeric input where a number is expected
-
-Instead of stopping the program, invalid input is rejected and the user is asked to enter it again.
-
-## Example
+For every course, the program calculates:
 
 ```text
-========================================
-          CGPA CALCULATOR
-========================================
-
-Enter number of semesters: 2
-
-========================================
-              SEMESTER 1
-========================================
-
-Enter number of courses: 3
-
-Enter grade for Course 1: A+
-Enter credit hours for Course 1: 4
-
-Enter grade for Course 2: A
-Enter credit hours for Course 2: 3
-
-Enter grade for Course 3: B+
-Enter credit hours for Course 3: 3
-
-----------------------------------
-Total Credit Hours : 10
-Weighted Points    : 92
-SGPA               : 9.2
-----------------------------------
+Weighted Points = Grade Point × Credit Hours
 ```
 
-The same process is repeated for the remaining semesters, after which the program displays the final CGPA.
+Then the semester SGPA is:
 
-## Technologies Used
+```text
+SGPA = Total Weighted Points / Total Credit Hours
+```
 
-* **C++**
+For multiple semesters, the program combines the weighted points and credits from all semesters:
+
+```text
+CGPA = Overall Weighted Points / Overall Credit Hours
+```
+
+This ensures that the CGPA remains credit-weighted even when different semesters have different total credit hours.
+
+## 🛡️ Input Validation
+
+The program handles common invalid inputs such as:
+
+* Invalid number of semesters
+* Invalid number of courses
+* Unsupported grades
+* Negative or zero credit hours
+* Non-numeric input where numeric values are expected
+
+The user is asked to enter the value again instead of the program terminating unexpectedly.
+
+## 🧠 OOP Concepts Used
+
+This project was also an opportunity to apply the following C++ OOP concepts:
+
+* **Class** — `SGPACalculator`
+* **Objects** — Used to process individual semesters
+* **Encapsulation** — Internal calculation data is kept private
+* **Constructors** — Used to initialize object data
+* **Member Functions** — Used for input, calculation, and result handling
+
+## 🛠️ Technologies Used
+
+* C++
 * Object-Oriented Programming
-* Arrays
-* Loops
-* Functions
-* Input Validation
-* Standard C++ Library
+* C++ Standard Library
+* VS Code
+* Git & GitHub
 
-## How to Run
+## ▶️ How to Run
 
-### 1. Clone the repository
+Clone the repository:
 
 ```bash
-git clone https://github.com/Prince-sah-codes/CodeAlpha_CGPA-calculator.git
+git clone <your-repository-link>
 ```
 
-### 2. Open the project
-
-Open the project folder in **VS Code** or any C++ IDE.
-
-### 3. Compile the program
-
-Using g++:
+Open the project in VS Code and compile:
 
 ```bash
 g++ main.cpp -o cgpa
 ```
 
-### 4. Run
-
-On Windows:
+Run the program:
 
 ```bash
 cgpa
 ```
 
-Or run the program directly through your C++ IDE.
+## 📈 Future Improvements
 
-## Future Improvements
+I plan to improve the project further by adding:
 
-Some improvements I would like to add in future versions:
+* GUI interface
+* Semester-wise result history
+* File-based result storage
+* Support for additional grading systems
+* Better user interface and navigation
 
-* A graphical user interface
-* Saving student results to a file
-* Displaying complete semester-wise results
-* Support for more grading systems
-* Better menu-based navigation
-* Option to update or remove course records
+## 👨‍💻 About
 
-## What I Learned
-
-Building this project helped me understand how individual C++ concepts come together in a complete program.
-
-Instead of only practicing classes, loops, or arrays separately, I used them together to solve an actual problem. It also gave me a better understanding of **encapsulation, input validation, credit-weighted calculations, and organizing code using OOP**.
-
-## Author
+This project was developed as part of my **CodeAlpha Internship** while learning and strengthening my C++ and OOP skills.
 
 **Prince Sah**
-
-B.Tech CSE Student | Learning C++, DSA & Full-Stack Development
+B.Tech CSE Student
 
 ---
 
-⭐ If you find this project useful, feel free to explore the code and suggest improvements.
+⭐ Built as part of the CodeAlpha Internship — Task 1.
